@@ -1,0 +1,405 @@
+[
+    {
+        "id": 1,
+        "name": "Pulsera con dije de ojo turco negro",
+        "sku": "PPDOTN0-018",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 18 cm de largo",
+        "image":  "assets/img/pulseras/PPD0TN02.webp",
+        "related": [2, 3],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPD0TN02.webp",
+            "assets/img/pulseras/PPD0TN01.webp",
+            "assets/img/pulseras/PPD0TN03.webp",
+            "assets/img/pulseras/pulsera.webp"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Pulsera con dije de ojo turco negro.CODIGO: PPDOTN0-018 ¿Está disponible?"
+
+    },
+    {
+        "id": 2,
+        "name": "Pulsera con dije de luna",
+        "sku": "PPDL0-018",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 18 cm de largo",
+        "image": "assets/img/pulseras/PPDL0-018.3.webp",
+        "related": [1, 3],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPDL0-018.3.webp",
+
+            "assets/img/pulseras/PPDL0-018.1.webp",
+        "assets/img/pulseras/PPDL0-018.2.webp",
+         "assets/img/pulseras/PPDL0-IM.webp"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en Pulsera con dije de luna, CODIGO: PPDL0-018 ¿Está disponible?"
+
+    },
+    {
+        "id": 3,
+        "name": "Esclava cartier lisa en plata ley 925",
+        "sku": "PECL7-020",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 7mm de grosor y 19 cm de largo con placa lisa 2 mm",
+        "image": "assets/img/pulseras/PECL7-0202.webp",
+        "related": [1, 2],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PECL7-0202.webp",
+           "assets/img/pulseras/PECL7-0201.webp",
+            "assets/img/pulseras/PECL7-02013.webp",
+            "assets/img/pulseras/PECL7-020IM.webp"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Esclava cartier lisa en plata ley 925. CODIGO: PECL7-020 ¿Está disponible?"
+
+    },
+    {
+        "id": 4,
+        "name": "Pulso Cubana Con Pave de plata, ley 925",
+        "sku": "PEV4-018",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 22 cm largo y 20 mm de ancho",
+        "image": "assets/img/pulseras/PEV4-0182.webp",
+        "related": [1, 2],
+        "category": "filter-esclavas",
+        "images": [
+          "assets/img/pulseras/PEV4-0182.webp",
+         "assets/img/pulseras/PEV4-0181.webp",
+         "assets/img/pulseras/PEV4-0183.webp",
+         "assets/img/pulseras/PEV4-018IM.jpeg"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Pulso Cubana Con Pave de plata, ley 925. CODIGO: PEV4-018 ¿Está disponible?"
+
+    },
+    {
+        "id": 5,
+        "name": "Pulsera de ojo turco negro",
+        "sku": "PPDOTAC0-018",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 18 cm de largo",
+        "image": "assets/img/pulseras/PPDOTAC0-0181.webp",
+        "related": [2, 3],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPDOTAC0-0181.webp",
+            "assets/img/pulseras/PPDOTAC0-0182.webp",
+             "assets/img/pulseras/PPDOTAC0-0183.webp",
+            "assets/img/pulseras/PPD0TAC0-018IM.jpeg"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Pulsera de ojo turco negro. CODIGO: PPDOTAC0-018 ¿Está disponible?"
+
+    },
+    {
+        "id": 6,
+        "name": "Esclava con visagra en plata ley 925",
+        "sku": "PPCUP20-22",
+        "price": 40.00,
+        "oldPrice": 45.00,
+        "description": "Medidas: 4 mm de grosor y 18 cm de largo.",
+        "image": "assets/img/pulseras/PPCUP20-221.webp",
+        "related": [2, 3],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPCUP20-221.webp",
+            "assets/img/pulseras/PPCUP20-222.webp",
+              "assets/img/pulseras/PPCUP20-223.webp",
+            "assets/img/pulseras/PPCUP20-22IM.jpeg"
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Esclava con visagra en plata ley 925. CODIGO: PPCUP20-22 ¿Está disponible?"
+
+    },
+    {
+        "id": 7,
+        "name": "Pulso con bolas facetas y dije de corazón",
+        "sku": "PPBFDC3-018",
+        "price": 50,
+        "oldPrice": 55,
+        "description": "Medidas: 3 mm de grosor y 18 cm de largo.",
+        "image": "assets/img/pulseras/PPBFDC3-0181.webp",
+        "related": [1,2,3,4],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPBFDC3-0181.webp",
+            "assets/img/pulseras/PPBFDC3-0182.webp",
+            "assets/img/pulseras/PPBFDC3-0183.webp",
+            "assets/img/pulseras/PPBFDC3-01IM.jpeg"
+
+        ],
+        "whatsappMessage": "Hola, estoy interesado en el Pulso con bolas facetas y dije de corazón.  CODIGO: PPBFDC3-018 ¿Está disponible?"
+
+    },
+    
+    {
+        "id": 8,
+        "name": "Pulso con figuras con tejido V.",
+        "sku": "PPFTV0-019",
+        "price": null,
+        "oldPrice": null,
+        "description": "",
+        "image": "assets/img/pulseras/PPFTV0-0192.webp",
+        "related": [4],
+        "category": "filter-esclavas",
+        "images": [
+            "assets/img/pulseras/PPFTV0-0192.webp",
+            "assets/img/pulseras/PPFTV0-0191.webp",
+            "assets/img/pulseras/PPFTV0-0193.webp",
+            "assets/img/pulseras/PPFTV0-019IM.jpeg"
+
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Pulso con figuras con tejido V. CODIGO: PPFTV0-019 ¿Está disponible?"
+
+    },
+    {
+        "id": 9,
+        "name": "Cadena Barbada Lisa de plata fina para dama.",
+        "sku": "PCBL2-055",
+        "price": 90,
+        "oldPrice": 120,
+        "description": "Medidas: 55 cm de largo y 2 mm de ancho.",
+        "image": "assets/img/cadenas/PCBL2-0551.webp",
+        "related": [4],
+        "category": "filter-cadena",
+        "images": [
+            "assets/img/cadenas/PCBL2-0551.webp",
+            "assets/img/cadenas/PCBL2-0552.webp",
+            "assets/img/cadenas/PCBL2-0553.webp",
+            "assets/img/cadenas/PCBL2-055IM.jpeg"
+
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina para dama. CODIGO: PCBL2-055 ¿Está disponible?"
+
+    },
+    
+    {
+        "id": 10,
+        "name": "Eslabón 3x1 Cadena Cartier Lisa de plata fina.",
+        "sku": "PCCL1-050",
+        "price": 90,
+        "oldPrice": 120,
+        "description": "Medidas: 50 cm de largo y 1 mm de ancho.",
+        "image": "assets/img/cadenas/PCCL1-0503.webp",
+        "related": [4,5,6],
+        "category": "filter-cadena",
+        "images": [
+            "assets/img/cadenas/PCCL1-0503.webp",
+            "assets/img/cadenas/PCCL1-0502.webp",
+            "assets/img/cadenas/PCCL1-0501.webp",
+            "assets/img/cadenas/PCCL1-050IM.jpeg"
+
+        ],
+        "whatsappMessage": "Hola, estoy interesado en el Eslabón 3x1 Cadena Cartier Lisa de plata fina. CODIGO: PCCL1-050 ¿Está disponible?"
+
+    },  
+     {
+        "id": 11,
+        "name": "Cadena doble rombo lisa de plata fina.",
+        "sku": "PCDR3-045",
+        "price": 90,
+        "oldPrice": 120,
+        "description": "Medidas: 45 cm de largo y 3 mm de ancho.",
+        "image": "assets/img/cadenas/PCDR3-0452.jpg",
+        "related": [4,5,6],
+        "category": "filter-cadena",
+        "images": [
+            "assets/img/cadenas/PCDR3-0452.jpg",
+            "assets/img/cadenas/PCDR3-0453.jpg",
+            "assets/img/cadenas/PCDR3-0451.jpg",
+            "assets/img/cadenas/PCDR3-04IM.jpeg"
+
+        ],
+        "whatsappMessage": "Hola, estoy interesado en la Cadena doble rombo lisa de plata fina. CODIGO: PCDR3-045 ¿Está disponible?"
+
+    },  
+    {
+       "id": 12,
+       "name": "Cadena Gucci de plata.",
+       "sku": "PCG3-050",
+       "price": 90,
+       "oldPrice": 120,
+       "description": "Medidas: 50 cm de largo y 3 mm de ancho",
+       "image": "assets/img/cadenas/PCG3-0503.webp",
+       "related": [4,5,6],
+       "category": "filter-cadena",
+       "images": [
+           "assets/img/cadenas/PCG3-0503.webp",
+           "assets/img/cadenas/PCG3-0502.webp",
+           "assets/img/cadenas/PCG3-0501.webp",
+           "assets/img/cadenas/PCG3-050IM.jpeg"
+
+       ],
+       "whatsappMessage": "Hola, estoy interesado en la Cadena Gucci de plata. CODIGO: PCG3-050 ¿Está disponible?"
+
+
+   },
+   {
+      "id": 13,
+      "name": "Cadena italiana estilo grano de café de plata.",
+      "sku": "PCIEGC2-055",
+      "price": 90,
+      "oldPrice": 120,
+      "description": "Medidas: 50 cm de largo y 2 mm de ancho",
+      "image": "assets/img/cadenas/PCIEGC2-0551.webp",
+      "related": [4,5,6],
+      "category": "filter-cadena",
+      "images": [
+          "assets/img/cadenas/PCIEGC2-0551.webp",
+          "assets/img/cadenas/PCIEGC2-0552.webp",
+          "assets/img/cadenas/PCIEGC2-0553.webp",
+          "assets/img/cadenas/PCIEGC2-055im.jpeg"
+
+      ],
+      "whatsappMessage": "Hola, estoy interesado en la Cadena italiana estilo grano de café de plata. CODIGO: PCIEGC2-055 ¿Está disponible?"
+
+  },
+  {
+     "id": 14,
+     "name": "Cadena italiana estilo grano de café lisa",
+     "sku": "PCIEGCL2-050",
+     "price": 90,
+     "oldPrice": 120,
+     "description": "Medidas: 50 cm de largo y 2 mm de ancho",
+     "image": "assets/img/cadenas/PCIEGCL2-0503.webp",
+     "related": [4,5,6],
+     "category": "filter-cadena",
+     "images": [
+         "assets/img/cadenas/PCIEGCL2-0503.webp",
+         "assets/img/cadenas/PCIEGCL2-050.webp",
+         "assets/img/cadenas/PCIEGCL2-0502.webp",
+         "assets/img/cadenas/PCIEGCL2-05IM.jpeg"
+
+     ],
+     "whatsappMessage": "Hola, estoy interesado en la Cadena italiana estilo grano de café lisa. CODIGO: PCIEGCL2-050 ¿Está disponible?"
+
+ },
+ {
+    "id": 15,
+    "name": "Cadena Singapur de plata",
+    "sku": "PCS2-055",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medida: 55 cm de largo y 2 mm de ancho",
+    "image": "assets/img/cadenas/PCS2-0552.webp",
+    "related": [4,5,6],
+    "category": "filter-cadena",
+    "images": [
+        "assets/img/cadenas/PCS2-0552.webp",
+        "assets/img/cadenas/PCS2-0551.webp",
+        "assets/img/cadenas/PCS2-0553.webp",
+        "assets/img/cadenas/PCS2-05im.jpeg"
+
+    ],
+    "whatsappMessage": "Hola, estoy interesado en la Cadena Singapur de plata. CODIGO: PCS2-055 ¿Está disponible?"
+
+}
+,
+ {
+    "id": 16,
+    "name": "Cadena torzal",
+    "sku": "PCT3-050",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 50 cm de largo y 3 mm de grosor",
+    "image": "assets/img/cadenas/PCT3-0503.webp",
+    "related": [4,5,6],
+    "category": "filter-cadena",
+    "images": [
+        "assets/img/cadenas/PCT3-0503.webp",
+        "assets/img/cadenas/PCT3-0502.webp",
+        "assets/img/cadenas/PCT3-0501.webp",
+        "assets/img/cadenas/PCT3-050IM.jpeg"
+
+    ],
+    "whatsappMessage": "Hola, estoy interesado en la Cadena torzal. CODIGO: PCT3-050 ¿Está disponible?"
+
+}
+,
+ {
+    "id": 17,
+    "name": "Rosario Facetado de Bola 4 circunferencia de 60 cm con dije de Virgen de 2 cm de altura y una cruz con Cristo liso de 3.5 cm de altura.",
+    "sku": "PRF4-060",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 50 cm de largo y 3 mm de grosor",
+    "image": "assets/img/cadenas/PRF4-0601.webp",
+    "related": [4,5,6],
+    "category": "filter-cadena",
+    "images": [
+        "assets/img/cadenas/PRF4-0601.webp",
+        "assets/img/cadenas/PRF4-0602.webp",
+        "assets/img/cadenas/PRF4-0603.webp",
+        "assets/img/cadenas/PRF4-060IM.jpeg"
+
+    ],
+    "whatsappMessage": "Hola, estoy interesado en la Rosario Facetado de Bola 4 circunferencia de 60 cm con dije de Virgen de 2 cm de altura y una cruz con Cristo liso de 3.5 cm de altura."
+
+},
+{
+   "id": 18,
+   "name": "Cadena Barbada Lisa de plata fina",
+   "sku": "PCBL1-050",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 50 cm de largo y 1 mm de ancho",
+   "image": "assets/img/cadenas/PCBL1-0502.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCBL1-0502.webp",
+    "assets/img/cadenas/PCBL1-0501.webp",
+    "assets/img/cadenas/PCBL1-050IM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina. CODIGO: PCBL1-050 ¿Está disponible?"
+
+}
+,
+{
+   "id": 19,
+   "name": "Cadena Barbada Lisa de plata fina",
+   "sku": "PCBL1-050",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 50 cm de largo y 1 mm de ancho",
+   "image": "assets/img/cadenas/PCBL1-0502.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCBL1-0502.webp",
+    "assets/img/cadenas/PCBL1-0501.webp",
+    "assets/img/cadenas/PCBL1-050IM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina. CODIGO: PCBL1-050 ¿Está disponible?"
+
+}
+
+,
+{
+   "id": 20,
+   "name": "Cadena Barbada Lisa de plata fina",
+   "sku": "PCBL2-050",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 50 cm de largo y 2 mm de ancho",
+   "image": "assets/img/cadenas/PCBL2-0502.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCBL2-0502.webp",
+    "assets/img/cadenas/PCBL2-0501.webp",
+    "assets/img/cadenas/PCBL2-0503.webp",
+    "assets/img/cadenas/PCBL2-050IM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina. CODIGO: PCBL1-050 ¿Está disponible?"
+
+}
+
+
+]

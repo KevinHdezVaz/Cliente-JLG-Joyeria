@@ -1,0 +1,293 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Detalles del producto" />
+        <meta name="author" content="Tu Nombre" />
+        <title>Detalle del Producto - Mi Tienda</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/css/styles.css" rel="stylesheet" />
+        <link href="assets/css/main.css" rel="stylesheet">
+        <!-- Favicons -->
+        <link href="assets/img/tlalpan.jpeg" rel="icon">
+        <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <style>
+            .thumbnail {
+                cursor: pointer;
+            }
+            .thumbnail img {
+                max-width: 100px;
+                max-height: 100px;
+            }
+            .image-container {
+                position: relative;
+                display: inline-block;
+            }
+            .zoom-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 2rem;
+                color: rgb(32, 47, 218); /* Cambia el color aquí */
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+            .image-container:hover .zoom-icon {
+                opacity: 1;
+            }
+            .image-container img {
+                transition: transform 0.3s;
+            }
+            .image-container:hover img {
+                transform: scale(1.05); /* Efecto mini zoom */
+            }
+            .fullscreen-image {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                justify-content: center;
+                align-items: center;
+                z-index: 1000;
+            }
+            .fullscreen-image img {
+                max-width: 90%;
+                max-height: 90%;
+            }
+            .fullscreen-image .close-icon {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 2rem;
+                color: white;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div class="container-fluid container-xl position-relative d-flex align-items-center">
+        
+            <a href="index.html" class="logo d-flex align-items-center me-auto">
+                <img src="assets/img/tlalp.png" alt="">
+                <h1 class="sitename">JLG Joyeria</h1>
+            </a>
+        
+            <nav id="navmenu" class="navmenu">
+                <ul>
+                <li><a href="index.html">Regresar<br></a></li>
+                </ul>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+            </nav>
+        
+            <a class="btn-getstarted flex-md-shrink-0" href="formulario.html">Unete a nosotros</a>
+        
+            </div>
+        </header>
+
+        <main class="main">
+            <section class="about section hero section">
+                <div class="py-5 container px-4 px-lg-5 my-5">
+                    <div class="row gx-4 gx-lg-5 align-items-center">
+                        <div class="col-md-6">
+                            <div class="image-container">
+                                <img id="mainImage" class="img-fluid mb-5 mb-md-0" alt="Imagen del producto" />
+                                <i class="bi bi-zoom-in zoom-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="small mb-1" id="productSKU"></div>
+                            <h1 class="display-5 fw-bolder" id="productName"></h1>
+                            <div class="fs-5 mb-5">
+                                <span class="text-decoration-line-through" id="oldPrice"></span>
+                                <span id="price"></span>
+                            </div>
+                            <p class="lead" id="productDescription"></p>
+                            <div class="d-flex">
+                                <button id="whatsappButton" class="btn btn-outline-success flex-shrink-0" type="button">
+                                    <i class="bi bi-whatsapp me-1"></i>
+                                    Comprar por WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div id="thumbnailContainer" class="d-flex flex-wrap">
+                                <!-- Las miniaturas se agregarán aquí -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="py-5 bg-light">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <h2 class="fw-bolder mb-4">Productos Relacionados</h2>
+                    <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="relatedProducts">
+                        <!-- Productos relacionados se agregarán aquí -->
+                    </div>
+                </div>
+            </section>
+         
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center text-center">
+          <div class="col-lg-6">
+            <h4>Unete a nosotros</h4>
+             
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="d-flex align-items-center">
+            <span class="sitename">JLG Joyeria</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>Calle Francia 1933 A, Moderna</p>
+            <p> Guadalajara, Jalisco</p>
+            <p class="mt-3"><strong>Telefono:</strong> <span>+52 1 33 1236 6096</span></p>
+            <p class="mt-3"><strong>Telefono:</strong> <span>+52 1 757 132 6784</span></p>
+            
+<p><strong>Email:</strong> <span><a href="mailto:ventasjlg@aftconta.mx">ventasjlg@aftconta.mx</a></span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Siguenos</h4>
+          <p>En nuestras redes sociales para estar al tanto de las noticias y novedades.</p>
+          <div class="social-links d-flex">
+             <a href="https://www.tiktok.com/@jlgjoyeriamx" target="_blank" title="TikTok"><i class="bi bi-tiktok"></i></a>
+             <a href="https://www.facebook.com/jlgjoyeriamx" target="_blank" title="Facebook"><i class="bi bi-facebook"></i></a>
+             <a href="https://www.instagram.com/jlgjoyeria.mx/" target="_blank" title="Instagram"><i class="bi bi-instagram"></i></a>
+             <a href="https://www.youtube.com/@JLG_JoyeriaMx" target="_blank" title="YouTube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12">
+          <h4>Ubicación</h4>
+          <p>Encuéntranos aquí:</p>
+          <!-- Aquí es donde insertas el iframe de Google Maps -->
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.086280347086!2d-103.36949491562198!3d20.66606850000009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428ae07a6904001%3A0x49d5320084cdbe3d!2sC.%20Francia%201933a%2C%20Moderna%2C%2044190%20Guadalajara%2C%20Jal.!5e0!3m2!1ses!2smx!4v1721772013261!5m2!1ses!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">JLG Joyeria</strong> <span>Todos los derechos reservados</span></p>
+      <div class="credits">
+    
+        
+      </div>
+    </div>
+
+  </footer>
+            <div class="fullscreen-image" id="fullscreenImage">
+                <i class="bi bi-x-lg close-icon"></i>
+                <img src="" alt="Imagen en pantalla completa" />
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const productId = urlParams.get('id');
+                    
+                    fetch('products.json')
+                        .then(response => response.json())
+                        .then(products => {
+                            const product = products.find(p => p.id == productId);
+                            if (product) {
+                                // Imagen principal
+                                const mainImage = document.getElementById('mainImage');
+                                mainImage.src = product.images[0];
+
+                                // Miniaturas
+                                const thumbnailContainer = document.getElementById('thumbnailContainer');
+                                thumbnailContainer.innerHTML = product.images.map(imgSrc => `
+                                    <div class="thumbnail me-2 mb-2">
+                                        <img src="${imgSrc}" alt="Imagen del producto" />
+                                    </div>
+                                `).join('');
+
+                                // Cambiar imagen principal al hacer clic en una miniatura
+                                thumbnailContainer.addEventListener('click', function (event) {
+                                    if (event.target.tagName === 'IMG') {
+                                        mainImage.src = event.target.src;
+                                    }
+                                });
+
+                                // Mostrar imagen en pantalla completa al hacer clic en la imagen principal
+                                const fullscreenImage = document.getElementById('fullscreenImage');
+                                const fullscreenImageImg = fullscreenImage.querySelector('img');
+                                mainImage.addEventListener('click', function () {
+                                    fullscreenImageImg.src = mainImage.src;
+                                    fullscreenImage.style.display = 'flex';
+                                });
+
+                                // Cerrar imagen en pantalla completa al hacer clic en el icono de cerrar
+                                const closeIcon = fullscreenImage.querySelector('.close-icon');
+                                closeIcon.addEventListener('click', function () {
+                                    fullscreenImage.style.display = 'none';
+                                });
+
+                                // Detalles del producto
+                                document.getElementById('productSKU').textContent = product.sku;
+                                document.getElementById('productName').textContent = product.name;
+                                document.getElementById('oldPrice').textContent = product.oldPrice ? `$${product.oldPrice.toFixed(2)}` : '';
+                                document.getElementById('price').textContent = `$${product.price.toFixed(2)}`;
+                                document.getElementById('productDescription').textContent = product.description;
+
+                            // Botón de WhatsApp
+                        const whatsappButton = document.getElementById('whatsappButton');
+                        const phoneNumber = '+5213312366096'; // Número de teléfono de WhatsApp
+                        whatsappButton.addEventListener('click', function () {
+                            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(product.whatsappMessage)}`;
+                            window.open(whatsappUrl, '_blank');
+                        });
+
+                                // Productos relacionados
+                                const relatedProductsContainer = document.getElementById('relatedProducts');
+                                product.related.forEach(relatedId => {
+                                    const relatedProduct = products.find(p => p.id == relatedId);
+                                    if (relatedProduct) {
+                                        const relatedProductHTML = `
+                                            <div class="col mb-5">
+                                                <div class="card h-100">
+                                                    <img class="card-img-top" src="${relatedProduct.image}" alt="Imagen del producto" />
+                                                    <div class="card-body p-4">
+                                                        <div class="text-center">
+                                                            <h5 class="fw-bolder">${relatedProduct.name}</h5>
+                                                            <span class="text-muted text-decoration-line-through">$${relatedProduct.oldPrice.toFixed(2)}</span>
+                                                            $${relatedProduct.price.toFixed(2)}
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product-details.html?id=${relatedProduct.id}">Ver producto</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `;
+                                        relatedProductsContainer.insertAdjacentHTML('beforeend', relatedProductHTML);
+                                    }
+                                });
+                            }
+                        })
+                        .catch(error => console.error('Error cargando el archivo JSON:', error));
+                });
+            </script>
+        </body>
+    </html>
