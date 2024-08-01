@@ -401,5 +401,127 @@
 
 }
 
+,
+{
+   "id": 21,
+   "name": "Cadena Barbada Lisa de plata fina",
+   "sku": "PCBL2-060",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 60 cm de largo y 2 mm de ancho",
+   "image": "assets/img/cadenas/PCBL2-0603.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCBL2-0603.webp",
+    "assets/img/cadenas/PCBL2-0602.webp",
+    "assets/img/cadenas/PCBL2-0601.webp",
+    "assets/img/cadenas/PCBL2-060IM.jpeg"
 
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina. CODIGO: PCBL2-060 ¿Está disponible?"
+
+},
+{
+   "id": 22,
+   "name": "Eslabón 3x1 Cadena Cartier Lisa de plata fina.",
+   "sku": "PCCL1-040",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 40 cm de largo y 1 mm de ancho.",
+   "image": "assets/img/cadenas/PCCL1-0401.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCCL1-0401.webp",
+    "assets/img/cadenas/PCCL1-0402.webp",
+    "assets/img/cadenas/PCCL1-0403.webp"
+   ],
+   "whatsappMessage": "Hola, estoy interesado en el Eslabón 3x1 Cadena Cartier Lisa de plata fina. CODIGO: PCCL1-040 ¿Está disponible?"
+
+}
+,
+{
+   "id": 23,
+   "name": "Eslabón 3x1 Cadena Cartier Lisa de plata fina.",
+   "sku": "PCCL1-055",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 55 cm de largo y 1 mm de ancho.",
+   "image": "assets/img/cadenas/PCCL1-0553.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCCL1-0553.webp",
+    "assets/img/cadenas/PCCL1-0552.webp",
+    "assets/img/cadenas/PCCL1-0551.webp",
+    "assets/img/cadenas/PCBL2-055IM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Barbada Lisa de plata fina. CODIGO: PCCL1-055 ¿Está disponible?"
+
+},
+
+{
+   "id": 24,
+   "name": "Cadena Estilo Gargantilla.",
+   "sku": "PCEG1-045A",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 45 cm de largo y 1mm de ancho.",
+   "image": "assets/img/cadenas/PCEG1-045A2.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCEG1-045A2.webp",
+    "assets/img/cadenas/PCEG1-045A1.webp",
+    "assets/img/cadenas/PCEG1-045A3.webp",
+    "assets/img/cadenas/PCEG1-045AIM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Estilo Gargantilla. CODIGO: PCEG1-045A ¿Está disponible?"
+
+},
+
+{
+   "id": 25,
+   "name": "Cadena Estilo Gargantilla.",
+   "sku": "PCEG1-045B",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 45 cm de largo y 1mm de ancho.",
+   "image": "assets/img/cadenas/PCEG1-045A2.webp",
+   "related": [4,5,6],
+   "category": "filter-cadena",
+   "images": [
+    "assets/img/cadenas/PCEG1-045A2.webp",
+    "assets/img/cadenas/PCEG1-045A1.webp",
+    "assets/img/cadenas/PCEG1-045A3.webp",
+    "assets/img/cadenas/PCEG1-045AIM.jpeg"
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en la Cadena Estilo Gargantilla. CODIGO: PCEG1-045A ¿Está disponible?"
+
+},
+
+{
+    "id": 26,
+    "name": "Cadena Estilo Gargantilla.",
+    "sku": "PCEG1-045C",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 45 cm de largo y 1mm de ancho.",
+    "image": "assets/img/cadenas/PCEG1-0452.jpg",
+    "related": [4,5,6],
+    "category": "filter-cadena",
+    "images": [
+     "assets/img/cadenas/PCEG1-0452.jpg",
+     "assets/img/cadenas/PCEG1-0451.jpg",
+     "assets/img/cadenas/PCEG1-0453.jpg",
+     "assets/img/cadenas/PCEG1-045IM.jpeg"
+ 
+    ],
+    "whatsappMessage": "Hola, estoy interesado en la Cadena Estilo Gargantilla. CODIGO: PCEG1-045C ¿Está disponible?"
+ 
+ }
 ]
