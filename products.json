@@ -524,4 +524,179 @@
     "whatsappMessage": "Hola, estoy interesado en la Cadena Estilo Gargantilla. CODIGO: PCEG1-045C ¿Está disponible?"
  
  }
+ ,
+
+{
+    "id": 27,
+    "name": "Cadena Gucci de plata.",
+    "sku": "PCG2-055",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 55 cm de largo y 2 mm de ancho",
+    "image": "assets/img/cadenas/PCG2-0551.webp",
+    "related": [4,5,6],
+    "category": "filter-cadena",
+    "images": [
+     "assets/img/cadenas/PCG2-0551.webp",
+     "assets/img/cadenas/PCG2-0552.webp",   
+     "assets/img/cadenas/PCG2-0553.webp",
+     "assets/img/cadenas/PCG2-055IM.jpeg"
+ 
+    ],
+    "whatsappMessage": "Hola, estoy interesado en la Cadena Gucci de plata. CODIGO: PCG2-055 ¿Está disponible?"
+ 
+ } ,
+
+ {
+     "id": 28,
+     "name": "Cadena Marinera Lisa de plata fina",
+     "sku": "PCML2-050",
+     "price": 90,
+     "oldPrice": 120,
+     "description": "Medidas: 50 cm de largo y 2 mm de ancho.",
+     "image": "assets/img/cadenas/PCML2-0502.webp",
+     "related": [4,5,6],
+     "category": "filter-cadena",
+     "images": [
+      "assets/img/cadenas/PCML2-0502.webp",
+      "assets/img/cadenas/PCML2-0501.webp",   
+      "assets/img/cadenas/PCML2-0503.webp",
+      "assets/img/cadenas/PCML2-050IM.jpeg"
+  
+     ],
+     "whatsappMessage": "Hola, estoy interesado en la Cadena Marinera Lisa de plata fina. CODIGO: PCML2-050 ¿Está disponible?"
+  
+  },
+
+  {
+      "id": 29,
+      "name": "Cadena Marinera Lisa de plata fina",
+      "sku": "PCML2-055",
+      "price": 90,
+      "oldPrice": 120,
+      "description": "Medidas: 50 cm de largo y 2 mm de ancho.",
+      "image": "assets/img/cadenas/PCML2-0551.webp",
+      "related": [4,5,6],
+      "category": "filter-cadena",
+      "images": [
+       "assets/img/cadenas/PCML2-0551.webp",
+       "assets/img/cadenas/PCML2-0552.webp",   
+       "assets/img/cadenas/PCML2-055IM.webp"
+   
+      ],
+      "whatsappMessage": "Hola, estoy interesado en la Cadena Marinera Lisa de plata fina. CODIGO: PCML2-055 ¿Está disponible?"
+   
+   },
+ 
+  {
+      "id": 30,
+      "name": "Cadena Singapur de plata",
+      "sku": "PCS3-055",
+      "price": 90,
+      "oldPrice": 120,
+      "description": "Medidas: 55 cm de largo y 3 mm de ancho.",
+      "image": "assets/img/cadenas/PCS3-0552.webp",
+      "related": [4,5,6],
+      "category": "filter-cadena",
+      "images": [
+       "assets/img/cadenas/PCS3-0552.webp",
+       "assets/img/cadenas/PCS3-0551.webp",   
+       "assets/img/cadenas/PCS3-0553.webp",   
+
+       "assets/img/cadenas/PCS3-055IM.jpeg"
+   
+      ],
+      "whatsappMessage": "Hola, estoy interesado en la Cadena Singapur de plata. CODIGO: PCS3-055 ¿Está disponible?"
+   
+   }
+   ,
+ 
+  {
+      "id": 31,
+      "name": "Cadena Singapur de plata",
+      "sku": "PCS2-050",
+      "price": 90,
+      "oldPrice": 120,
+      "description": "Medidas: 5O cm de largo y 2 mm de ancho.",
+      "image": "assets/img/cadenas/PCS2-0502.webp",
+      "related": [4,5,6],
+      "category": "filter-cadena",
+      "images": [
+       "assets/img/cadenas/PCS2-0502.webp",
+       "assets/img/cadenas/PCS2-0501.webp",   
+       "assets/img/cadenas/PCS2-050IM.webp"   
+ 
+   
+      ],
+      "whatsappMessage": "Hola, estoy interesado en la Cadena Singapur de plata. CODIGO: PCS3-055 ¿Está disponible?"
+   
+   },
+ 
+ 
+  {
+      "id": 32,
+      "name": "Cadena torzal plata ley 925.",
+      "sku": "PCT3-055",
+      "price": 90,
+      "oldPrice": 120,
+      "description": "Medidas: 55 cm de largo y 3 mm de grosor.",
+      "image": "assets/img/cadenas/PCT3-0552.webp",
+      "related": [4,5,6],
+      "category": "filter-cadena",
+      "images": [
+       "assets/img/cadenas/PCT3-0552.webp",
+       "assets/img/cadenas/PCT3-0551.webp",   
+       "assets/img/cadenas/PCT3-0553.webp",   
+       "assets/img/cadenas/PCT3-055IM.jpeg"   
+ 
+   
+      ],
+      "whatsappMessage": "Hola, estoy interesado en la Cadena torzal plata ley 925. CODIGO: PCT3-055 ¿Está disponible?"
+   
+   },
+   
+  {
+    "id": 33,
+    "name": "Dije de 2 gatos juntos.",
+    "sku": "PD2GJ17-24",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 17 mm de ancho por 24 mm",
+    "image": "assets/img/dijes_medallas/PD2GJ17-243.webp",
+    "related": [4,5,6],
+    "category": "filter-dijes",
+    "images": [
+     "assets/img/dijes_medallas/PD2GJ17-243.webp",
+     "assets/img/dijes_medallas/PD2GJ17-241.webp",   
+     "assets/img/dijes_medallas/PD2GJ17-242.webp",   
+     "assets/img/dijes_medallas/PD2GJ17-24IM.jpeg"   
+
+ 
+    ],
+    "whatsappMessage": "Hola, estoy interesado en el Dije de 2 gatos juntos.. CODIGO: PCT3-055 ¿Está disponible?"
+ 
+ },
+ 
+   
+  {
+    "id": 34,
+    "name": "Dije de corazón con 2 manos en el centro",
+    "sku": "PDC2MC18-18",
+    "price": 90,
+    "oldPrice": 120,
+    "description": "Medidas: 18 mm de ancho y 18 mm de largo.",
+    "image": "assets/img/dijes_medallas/PDC2MC18-181.webp",
+    "related": [4,5,6],
+    "category": "filter-dijes",
+    "images": [
+     "assets/img/dijes_medallas/PDC2MC18-181.webp",
+     "assets/img/dijes_medallas/PDC2MC18-182.webp",   
+     "assets/img/dijes_medallas/PDC2MC18-182.webp",   
+     "assets/img/dijes_medallas/PDC2MC18-18im.jpeg"   
+
+ 
+    ],
+    "whatsappMessage": "Hola, estoy interesado en el Dije de 2 gatos juntos.. CODIGO: PCT3-055 ¿Está disponible?"
+ 
+ }
 ]

@@ -1,225 +1,501 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Detalles del producto" />
-    <meta name="author" content="Tu Nombre" />
-    <title>Detalle del Producto - Mi Tienda</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <link href="assets/css/main.css" rel="stylesheet">
-    <!-- Favicons -->
-    <link href="assets/img/tlalpan.jpeg" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-    <style>
-        .thumbnail {
-            cursor: pointer;
+package mx.com.bancoazteca.azteca360.rsdk.view.credit.auth
+
+import android.annotation.SuppressLint
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
+import android.content.res.TypedArray
+import android.graphics.Typeface
+import android.os.CountDownTimer
+import android.os.Handler
+import android.os.Looper
+import android.text.Editable
+import android.text.InputFilter
+import android.text.TextWatcher
+import android.util.AttributeSet
+import android.util.Log
+import android.view.ActionMode
+import android.view.KeyEvent
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputConnection
+import android.view.inputmethod.InputMethodManager
+import android.widget.EditText
+import android.widget.FrameLayout
+import androidx.annotation.ColorInt
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.widget.doAfterTextChanged
+import androidx.lifecycle.MutableLiveData
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import mx.com.bancoazteca.azteca360.rsdk.R
+import mx.com.bancoazteca.azteca360.rsdk.databinding.BafpCreditLoginOtpBinding
+
+@SuppressLint("CustomViewStyleable")
+class BAFPCreditLoginOTP internal constructor(
+    context: Context, attrs: AttributeSet? = null
+) : FrameLayout(context, attrs) {
+
+    private lateinit var countDownTimer: CountDownTimer
+    private var vBind: BafpCreditLoginOtpBinding = BafpCreditLoginOtpBinding.inflate(LayoutInflater.from(context), this, true)
+    internal val onNextScreen: MutableLiveData<String?> = MutableLiveData<String?>()
+    private lateinit var editTexts: List<EditText>
+    private val handler = Handler(Looper.getMainLooper())
+
+
+//    private val keepKeyboardOpenRunnable = object : Runnable {
+//        override fun run() {
+//            if (vBind.et1.text.isEmpty()) {
+//                vBind.et1.requestFocus()
+//                showKeyboard(vBind.et1)
+//            }
+//            handler.postDelayed(this, 100)
+//        }
+//    }
+private val keepKeyboardOpenRunnable = object : Runnable {
+    override fun run() {
+        if (!vBind.et1.hasFocus() && vBind.et1.text.isEmpty()) {
+            vBind.et1.requestFocus()
+            showKeyboard(vBind.et1)
         }
-        .thumbnail img {
-            max-width: 100px;
-            max-height: 100px;
+       // handler.postDelayed(this, 100)
+    }
+}
+
+    private val smsReceiver = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val code = intent.getStringExtra("code")
+            code?.let {
+                if (code.length == 7) {
+                    for (i in code.indices) {
+                        editTexts[i].setText(code[i].toString())
+                    }
+                    editTexts[6].clearFocus()
+                }
+            }
         }
-        .zoom-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2rem;
-            color: red; /* Cambia el color aquí */
-            display: none;
-        }
-        .image-container {
-            position: relative;
-            display: inline-block;
+    }
+
+    init {
+        context.obtainStyledAttributes(attrs, R.styleable.BAFPCreditOtpValidate).let { typedArray ->
+            typedArray.setupValues()
+            typedArray.recycle()
         }
 
-        
-        .image-container:hover .zoom-icon {
-            display: block;
+        if (context is AppCompatActivity) {
+            context.window.setFlags(
+                WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE
+            )
         }
-        .image-container:hover img {
-            transform: scale(1.05); /* Efecto mini zoom */
+        vBind.et1.requestFocus()
+        // Mostrar el teclado virtual
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(vBind.et1, InputMethodManager.SHOW_IMPLICIT)
+
+        editTexts = listOf(
+            vBind.et1,
+            vBind.et2,
+            vBind.et3,
+            vBind.et4,
+            vBind.et5,
+            vBind.et6,
+            vBind.et7
+        )
+        initialEvents()
+    }
+//    override fun onAttachedToWindow() {
+//        super.onAttachedToWindow()
+//        LocalBroadcastManager.getInstance(context).registerReceiver(smsReceiver,
+//            IntentFilter("SMS_CODE_RECEIVED"))
+//        vBind.et1.requestFocus()
+//        showKeyboard(vBind.et1)
+//    }
+//    override fun onDetachedFromWindow() {
+//        super.onDetachedFromWindow()
+//        handler.removeCallbacks(keepKeyboardOpenRunnable)
+//    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        handler.post(keepKeyboardOpenRunnable)
+    }
+
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        handler.removeCallbacks(keepKeyboardOpenRunnable)
+    }
+    private fun disableCopyPaste(editText: EditText) {
+        editText.setOnLongClickListener { true }
+        editText.customSelectionActionModeCallback = object : ActionMode.Callback {
+            override fun onCreateActionMode(mode: ActionMode?, menu: Menu?) = false
+            override fun onPrepareActionMode(mode: ActionMode?, menu: Menu?) = false
+            override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?) = false
+            override fun onDestroyActionMode(mode: ActionMode?) {}
         }
-        .fullscreen-image {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
+        editText.isLongClickable = false
+        editText.setTextIsSelectable(false)
+    }
+
+
+
+    private fun EditText.setupEditText(
+        mBinding: BafpCreditLoginOtpBinding,
+        next: EditText?,
+        prev: EditText?
+    ) {
+        this.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+            override fun afterTextChanged(s: Editable?) {
+                if (s?.length == 1) {
+                    this@setupEditText.background = ContextCompat.getDrawable(
+                        context,
+                        R.drawable.custom_rounder_et_border_black
+                    )
+                    next?.requestFocus()
+                } else {
+                    this@setupEditText.background =
+                        ContextCompat.getDrawable(context, R.drawable.custom_rounder_editext)
+                    if (this@setupEditText == mBinding.et1) {
+                        mBinding.et1.requestFocus()
+                    } else {
+                        prev?.requestFocus()
+                    }
+                }
+                updateNextButtonState()
+            }
+        })
+
+        this.setOnKeyListener { _, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_DOWN) {
+                if (this.text.isEmpty()) {
+                    prev?.requestFocus()
+                    prev?.text?.clear()
+                } else {
+                    this.text.clear()
+                }
+                true
+            } else {
+                false
+            }
         }
-        .fullscreen-image img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        .fullscreen-image .close-icon {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
-</head>
 
-<body>
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center">
-    
-          <a href="index.html" class="logo d-flex align-items-center me-auto">
-             <img src="assets/img/tlalp.png" alt="">
-            <h1 class="sitename">JLG Joyeria</h1>
-          </a>
-    
-          <nav id="navmenu" class="navmenu">
-            <ul>
-              <li><a href="index.html">Regresar<br></a></li>
-            </ul>
-            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-          </nav>
-    
-          <a class="btn-getstarted flex-md-shrink-0" href="formulario.html">Unete a nosotros</a>
-    
-        </div>
-      </header>
+        this.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(1))
+    }
 
-      <main class="main">
-        <section class="about section hero section">
-            <div class="py-5 container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6">
-                        <div class="image-container">
-                            <img id="mainImage" class="img-fluid mb-5 mb-md-0" alt="Imagen del producto" />
-                            <i class="bi bi-zoom-in zoom-icon"></i>
-                        </div>
-                        <div class="fullscreen-image" id="fullscreenImage">
-                            <img src="" alt="Imagen en pantalla completa" />
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="small mb-1" id="productSKU"></div>
-                        <h1 class="display-5 fw-bolder" id="productName"></h1>
-                        <div class="fs-5 mb-5">
-                            <span class="text-decoration-line-through" id="oldPrice"></span>
-                            <span id="price"></span>
-                        </div>
-                        <p class="lead" id="productDescription"></p>
-                        <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                                <i class="bi-cart-fill me-1"></i>
-                                Agregar al carrito
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div id="thumbnailContainer" class="d-flex flex-wrap">
-                            <!-- Las miniaturas se agregarán aquí -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="py-5 bg-light">
-            <div class="container px-4 px-lg-5 mt-5">
-                <h2 class="fw-bolder mb-4">Productos Relacionados</h2>
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="relatedProducts">
-                    <!-- Productos relacionados se agregarán aquí -->
-                </div>
-            </div>
-        </section>
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Derechos reservados &copy; Mi Tienda 2024</p></div>
-        </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const urlParams = new URLSearchParams(window.location.search);
-                const productId = urlParams.get('id');
-                
-                fetch('products.json')
-                    .then(response => response.json())
-                    .then(products => {
-                        const product = products.find(p => p.id == productId);
-                        if (product) {
-                            // Imagen principal
-                            const mainImage = document.getElementById('mainImage');
-                            mainImage.src = product.images[0];
-
-                            // Miniaturas
-                            const thumbnailContainer = document.getElementById('thumbnailContainer');
-                            thumbnailContainer.innerHTML = product.images.map(imgSrc => `
-                                <div class="thumbnail me-2 mb-2">
-                                    <img src="${imgSrc}" alt="Imagen del producto" />
-                                </div>
-                            `).join('');
-
-                            // Cambiar imagen principal al hacer clic en una miniatura
-                            thumbnailContainer.addEventListener('click', function (event) {
-                                if (event.target.tagName === 'IMG') {
-                                    mainImage.src = event.target.src;
-                                }
-                            });
-
-                            // Mostrar imagen en pantalla completa al hacer clic en la imagen principal
-                            const fullscreenImage = document.getElementById('fullscreenImage');
-                            const fullscreenImageImg = fullscreenImage.querySelector('img');
-                            mainImage.addEventListener('click', function () {
-                                fullscreenImageImg.src = mainImage.src;
-                                fullscreenImage.style.display = 'flex';
-                            });
-
-                            // Cerrar imagen en pantalla completa al hacer clic en el icono de cerrar
-                            const closeIcon = fullscreenImage.querySelector('.close-icon');
-                            closeIcon.addEventListener('click', function () {
-                                fullscreenImage.style.display = 'none';
-                            });
-
-                            // Otros detalles del producto
-                            document.getElementById('productSKU').textContent = 'SKU: ' + product.sku;
-                            document.getElementById('productName').textContent = product.name;
-                            document.getElementById('oldPrice').textContent = '$' + product.oldPrice.toFixed(2);
-                            document.getElementById('price').textContent = '$' + product.price.toFixed(2);
-                            document.getElementById('productDescription').textContent = product.description;
-
-                            const relatedProductsContainer = document.getElementById('relatedProducts');
-                            product.related.forEach(relatedId => {
-                                const relatedProduct = products.find(p => p.id == relatedId);
-                                if (relatedProduct) {
-                                    const relatedProductHTML = `
-                                        <div class="col mb-5">
-                                            <div class="card h-100">
-                                                <img class="card-img-top" src="${relatedProduct.image}" alt="..." />
-                                                <div class="card-body p-4">
-                                                    <div class="text-center">
-                                                        <h5 class="fw-bolder">${relatedProduct.name}</h5>
-                                                        $${relatedProduct.price.toFixed(2)}
-                                                    </div>
-                                                </div>
-                                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                                    <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="product-details.html?id=${relatedProduct.id}">Ver producto</a></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    `;
-                                    relatedProductsContainer.insertAdjacentHTML('beforeend', relatedProductHTML);
-                                }
-                            });
+    private fun setupEditTextListeners() {
+        for (i in editTexts.indices) {
+            editTexts[i].addTextChangedListener(object : TextWatcher {
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+                override fun afterTextChanged(s: Editable?) {
+                    if (s?.length == 1) {
+                        editTexts[i].background = ContextCompat.getDrawable(
+                            context,
+                            R.drawable.custom_rounder_et_border_black
+                        )
+                        if (i < editTexts.size - 1) {
+                            editTexts[i + 1].isEnabled = true
+                            editTexts[i + 1].requestFocus()
                         }
-                    })
-                    .catch(error => console.error('Error cargando el archivo JSON:', error));
-            });
-        </script>
-    </main>
-</body>
-</html>
+                    } else {
+                        editTexts[i].background = ContextCompat.getDrawable(
+                            context,
+                            R.drawable.custom_rounder_editext
+                        )
+                    }
+                    updateNextButtonState()
+                }
+            })
+
+            editTexts[i].setOnKeyListener { _, keyCode, event ->
+                if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_DOWN) {
+                    if (editTexts[i].text.isEmpty() && i > 0) {
+                        editTexts[i - 1].isEnabled = true
+                        editTexts[i - 1].requestFocus()
+                        editTexts[i - 1].text?.let { it.delete(it.length - 1, it.length) }
+                        return@setOnKeyListener true
+                    }
+                }
+                false
+            }
+        }
+    }
+
+    private fun initialEvents() {
+        initTimer(65L)
+        vBind.bafpCreditTvTimer.visibility = View.VISIBLE
+        for (editText in editTexts) {
+            disableCopyPaste(editText)
+        }
+        vBind.apply {
+            bafpCreditTvMessage.text =
+                context.getString(R.string.txt_mensaje_envio_cod, "5613363773")
+            et1.setupEditText(this, et2, null)
+            et2.setupEditText(this, et3, et1)
+            et3.setupEditText(this, et4, et2)
+            et4.setupEditText(this, et5, et3)
+            et5.setupEditText(this, et6, et4)
+            et6.setupEditText(this, et7, et5)
+            et7.setupEditText(this, null, et6)
+
+            bafpCreditBtnReenviar.setOnClickListener {
+                initTimer(65L)
+            }
+            setupEditTextListeners()
+            vBind.et1.requestFocus()
+            showKeyboard(vBind.et1)
+
+
+            btnNext.setOnClickListener {
+                onNextScreen.value = getCode()
+                context.unregisterReceiver(smsReceiver)
+            }
+        }
+
+        // Mantener el foco en et1 y el teclado abierto
+        vBind.et1.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                showKeyboard(vBind.et1)
+            }
+        }
+
+        // Iniciar el runnable para mantener el teclado abierto
+        handler.post(keepKeyboardOpenRunnable)
+    }
+
+
+
+    private fun updateNextButtonState() {
+        vBind.btnNext.isEnabled = editTexts.all { it.text.isNotEmpty() }
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private fun EditText.validateNumber(
+        mBinding: BafpCreditLoginOtpBinding,
+        next: EditText?,
+        prev: EditText?
+    ) {
+        val et = this
+        doAfterTextChanged {
+            disableEt()
+
+            if (it?.isEmpty() == true && et == mBinding.et1) {
+                et.postDelayed({
+                    et.requestFocus()
+                    showKeyboard(et)
+                }, 10)
+            }
+            if (mBinding.et1.text.isNotEmpty() && mBinding.et2.text.isNotEmpty() && mBinding.et3.text.isNotEmpty()
+                && mBinding.et4.text.isNotEmpty() && mBinding.et5.text.isNotEmpty() && mBinding.et6.text.isNotEmpty() && mBinding.et7.text.isNotEmpty()) {
+                mBinding.btnNext.isEnabled = true
+                setBAckroundBlack(mBinding.et1)
+                setBAckroundBlack(mBinding.et2)
+                setBAckroundBlack(mBinding.et3)
+                setBAckroundBlack(mBinding.et4)
+                setBAckroundBlack(mBinding.et5)
+                setBAckroundBlack(mBinding.et6)
+                setBAckroundBlack(mBinding.et7)
+            } else {
+                mBinding.btnNext.isEnabled = false
+            }
+            if (it != null) {
+                if (it.isNotEmpty()) {
+                    et.background = ContextCompat.getDrawable(context, R.drawable.custom_rounder_et_border_black)
+                    if (next != null) {
+                        next.isEnabled = true
+                        next.requestFocus()
+                        showKeyboard(next)
+                        et.isEnabled = false
+                    }
+                    if (prev != null) prev.isEnabled = false
+                } else {
+                    if (et != mBinding.et7) {
+                        et.background = ContextCompat.getDrawable(context, R.drawable.custom_rounder_editext)
+                        if (et == mBinding.et1) {
+                            et.requestFocus()
+                            showKeyboard(et)
+                        } else {
+                            prev?.isEnabled = true
+                            prev?.requestFocus()
+                            showKeyboard(prev!!)
+                            et.text?.clear()
+                            if (et != mBinding.et1) {
+                                et.isEnabled = false
+                            }
+                        }
+                        mBinding.et7.isEnabled = false
+                    } else {
+                        et.text?.clear()
+                    }
+                }
+            }
+        }
+    }
+    private fun showKeyboard(view: View) {
+        val imm = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(view, InputMethodManager.SHOW_FORCED)
+    }
+
+    private fun EditText.other(
+        next: EditText?,
+        prev: EditText?
+    ) {
+        this.setOnKeyListener { view, keyCode, event ->
+            if (keyCode == KeyEvent.KEYCODE_DEL && this.text.isEmpty() && event.action == KeyEvent.ACTION_DOWN) {
+                this.background = ContextCompat.getDrawable(context,R.drawable.custom_rounder_editext)
+                prev?.text?.clear()
+                return@setOnKeyListener true // Indica que el evento ha sido manejado
+            } else if (keyCode == KeyEvent.KEYCODE_DEL && this.text.isNotEmpty() && event.action == KeyEvent.ACTION_DOWN) {
+                this.background = ContextCompat.getDrawable(context,R.drawable.custom_rounder_editext)
+                this?.text?.clear()
+                return@setOnKeyListener true // Indica que el evento ha sido manejado
+            } else if(this.text.isNotEmpty() && event.action == KeyEvent.ACTION_DOWN){
+                next?.text = Editable.Factory.getInstance().newEditable(event.unicodeChar.toChar().toString())
+                return@setOnKeyListener true
+            }
+            false // Deja que el sistema maneje el evento
+        }
+    }
+
+    private fun setBAckroundBlack(editText: EditText){
+        editText.background = ContextCompat.getDrawable(context,R.drawable.custom_rounder_et_border_black)
+    }
+
+    private fun initTimer(seconds: Long){
+        vBind.bafpCreditTvQuestion.visibility = View.GONE
+        vBind.bafpCreditBtnReenviar.visibility = View.GONE
+        vBind.bafpCreditTvTimer.visibility = View.VISIBLE
+        countDownTimer = object : CountDownTimer(seconds * 1000, 1000) {
+
+            @SuppressLint("DefaultLocale")
+            override fun onTick(millisUntilFinished: Long) {
+                val secondsRemaining = millisUntilFinished / 1000
+                val secondsDigits = String.format("%02d", secondsRemaining - (60*(secondsRemaining/60)))
+                when (secondsRemaining) {
+                    in 0..seconds -> vBind.bafpCreditTvTimer.text = context.getString(
+                        R.string.txt_timer,
+                        "${secondsRemaining/60}:${secondsDigits}"
+                    )
+                }
+            }
+            override fun onFinish() {
+                vBind.bafpCreditTvQuestion.visibility = View.VISIBLE
+                vBind.bafpCreditBtnReenviar.visibility = View.VISIBLE
+                vBind.bafpCreditTvTimer.visibility = View.GONE
+            }
+        }
+        countDownTimer.start()
+    }
+
+    private fun getCode():String{
+        return "${vBind.et1.text}${vBind.et2.text}${vBind.et3.text}${vBind.et4.text}${vBind.et5.text}${vBind.et6.text}${vBind.et7.text}"
+    }
+
+
+    private fun disableEt(){
+        vBind.apply {
+            if (et1.text.isEmpty() && et2.text.isEmpty() && et3.text.isEmpty() && et4.text.isEmpty() && et5.text.isEmpty() && et6.text.isEmpty() && et7.text.isEmpty()){
+                et2.isEnabled = false
+                et3.isEnabled = false
+                et4.isEnabled = false
+                et5.isEnabled = false
+                et6.isEnabled = false
+                et7.isEnabled = false
+            }
+        }
+    }
+
+
+
+    @SuppressLint("ResourceType")
+    private fun TypedArray.setupValues() {
+        setFontFamilyTittle(getString(R.styleable.BAFPCreditOtpPhone_setFontFamilyTitleCreditPhone))
+        setFontFamilySubtitle( getString(R.styleable.BAFPCreditOtpPhone_setFontFamilyMessageCreditPhone))
+        setFontFamilyTxtQuestion(getString(R.styleable.BAFPCreditOtpValidate_setFontFamilyQuestionOtpValidate))
+        setFontFamilyTxtBtnReenviar(getString(R.styleable.BAFPCreditOtpValidate_setFontFamilyTxtBtnReenviarOtpValidate))
+        setFontFamilyTxtTimer( getString(R.styleable.BAFPCreditOtpValidate_setFontFamilyTxtTimerOtpValidate))
+        setColorTextTitle(getColor(R.styleable.BAFPCreditOtpPhone_setColorTextTitleCreditPhone, ContextCompat.getColor(context, R.color.background_button_red)))
+        setColorTextMessage(getColor(R.styleable.BAFPCreditOtpPhone_setColorTextMessageCreditPhone, ContextCompat.getColor(context, R.color.Black)))
+        setColorTextTxtQuestion(getColor(R.styleable.BAFPCreditOtpValidate_setColorTextQuestionOtpValidate, ContextCompat.getColor(context, R.color.Black)))
+        setColorTextTxtBtnReenviar(getColor(R.styleable.BAFPCreditOtpValidate_setColorTextBtnReenviarOtpValidate, ContextCompat.getColor(context, R.color.bafp_credit_btn_blue)))
+        setColorTextTimer(getColor(R.styleable.BAFPCreditOtpValidate_setColorTextTxtTimerOtpValidate, ContextCompat.getColor(context, R.color.Black)))
+    }
+
+    fun setFontFamilyTittle(fontFamily: String?){
+        if (fontFamily == null) {
+            vBind.bafpCreditTvTittle.typeface = ResourcesCompat.getFont(context, R.font.roboto_medium)
+        }else{
+            vBind.bafpCreditTvTittle.typeface = Typeface.createFromAsset(context.assets, fontFamily)
+        }
+    }
+    fun setFontFamilySubtitle(fontFamily: String?){
+        if (fontFamily == null) {
+            vBind.bafpCreditTvMessage.typeface = ResourcesCompat.getFont(context, R.font.roboto_medium)
+        }else{
+            vBind.bafpCreditTvMessage.typeface = Typeface.createFromAsset(context.assets, fontFamily)
+        }
+    }
+    fun setColorTextTitle(@ColorInt color: Int?){
+        if (color == null){
+            vBind.bafpCreditTvTittle.setTextColor(ContextCompat.getColor(context,R.color.background_button_red))
+        }else{
+            vBind.bafpCreditTvTittle.setTextColor(color)
+        }
+    }
+    fun setColorTextMessage(@ColorInt color: Int?){
+        if (color == null){
+            vBind.bafpCreditTvMessage.setTextColor(ContextCompat.getColor(context,R.color.Black))
+        }else{
+            vBind.bafpCreditTvMessage.setTextColor(color)
+        }
+    }
+    fun setFontFamilyTxtQuestion(fontFamily: String?){
+        if (fontFamily == null){
+            vBind.bafpCreditTvQuestion.typeface = ResourcesCompat.getFont(context, R.font.roboto_medium)
+        }else{
+            vBind.bafpCreditTvQuestion.typeface = Typeface.createFromAsset(context.assets, fontFamily)
+        }
+    }
+    fun setColorTextTxtQuestion(@ColorInt color: Int?){
+        if (color == null){
+            vBind.bafpCreditTvQuestion.setTextColor(ContextCompat.getColor(context,R.color.Black))
+        }else{
+            vBind.bafpCreditTvQuestion.setTextColor(color)
+        }
+    }
+    fun setFontFamilyTxtBtnReenviar(fontFamily: String?){
+        if (fontFamily == null){
+            vBind.bafpCreditBtnReenviar.typeface = ResourcesCompat.getFont(context, R.font.roboto_medium)
+        }else{
+            vBind.bafpCreditBtnReenviar.typeface = Typeface.createFromAsset(context.assets, fontFamily)
+        }
+    }
+    fun setColorTextTxtBtnReenviar(@ColorInt color: Int?){
+        if (color == null){
+            vBind.bafpCreditBtnReenviar.setTextColor(ContextCompat.getColor(context,R.color.bafp_credit_btn_blue))
+        }else{
+            vBind.bafpCreditBtnReenviar.setTextColor(color)
+        }
+    }
+    fun setFontFamilyTxtTimer(fontFamily: String?){
+        if (fontFamily == null){
+            vBind.bafpCreditTvTimer.typeface = ResourcesCompat.getFont(context, R.font.roboto_medium)
+        }else{
+            vBind.bafpCreditTvTimer.typeface = Typeface.createFromAsset(context.assets, fontFamily)
+        }
+    }
+    fun setColorTextTimer(@ColorInt color: Int?){
+        if (color == null){
+            vBind.bafpCreditTvTimer.setTextColor(ContextCompat.getColor(context,R.color.Black))
+        }else{
+            vBind.bafpCreditTvTimer.setTextColor(color)
+        }
+    }
+}

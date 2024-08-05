@@ -229,73 +229,131 @@
     <!-- Custom script to load products -->
     <script>
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('products.json')
-        .then(response => response.json())
-        .then(products => {
-            const portfolioContainer = document.getElementById('portfolioContainer');
-            const searchInput = document.getElementById('searchInput');
-            const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+    let currentPage = 1;
+    const itemsPerPage = 16; // Ajusta este número según tus necesidades
+    const searchInput = document.getElementById('searchInput');
+    const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+    const portfolioContainer = document.getElementById('portfolioContainer');
 
-            function renderProducts(filteredProducts) {
-                portfolioContainer.innerHTML = ''; // Limpiar el contenedor antes de renderizar
-                filteredProducts.forEach(product => {
-                    const isSpecialProduct = product.id === 8;
-                    const productURL = isSpecialProduct ? 'product_list.html' : `product-detail.html?id=${product.id}`;
+    function loadProducts(page, filters = [], searchTerm = '') {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        
+        fetch('products.json')
+            .then(response => response.json())
+            .then(products => {
+                let filteredProducts = products;
+                
+                // Aplicar filtros
+                if (filters.length > 0) {
+                    filteredProducts = filteredProducts.filter(product => 
+                        filters.includes(product.category)
+                    );
+                }
+                
+                // Aplicar búsqueda
+                if (searchTerm) {
+                    filteredProducts = filteredProducts.filter(product => 
+                        product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                        product.description.toLowerCase().includes(searchTerm.toLowerCase())
+                    );
+                }
 
-                    const productHTML = `
-                        <div class="col mb-5 portfolio-item">
-                            <a href="${productURL}" title="Ir a ${product.name}">
-                                <div class="portfolio-content h-100">
-                                    <img src="${product.image}" class="img-fluid w-100 h-auto" alt="${product.name}">
-                                    <div class="portfolio-info">
-                                        <h4>${product.name}</h4>
-                                        <p>${product.description}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    `;
-                    portfolioContainer.insertAdjacentHTML('beforeend', productHTML);
-                });
-
-                // Inicializar Isotope después de agregar los elementos
-                const iso = new Isotope(portfolioContainer, {
-                    itemSelector: '.portfolio-item',
-                    layoutMode: 'masonry'
-                });
-
-                // Actualizar el diseño de Isotope después de la carga de imágenes
-                imagesLoaded(portfolioContainer, function () {
-                    iso.layout();
-                });
-            }
-
-            function filterProducts() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const selectedFilters = Array.from(filterCheckboxes)
-                    .filter(checkbox => checkbox.checked)
-                    .map(checkbox => checkbox.value);
-
-                const filteredProducts = products.filter(product => {
-                    const matchesSearchTerm = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
-                    const matchesFilters = selectedFilters.length === 0 || selectedFilters.includes(product.category);
-                    return matchesSearchTerm && matchesFilters;
-                });
-
-                renderProducts(filteredProducts);
-            }
-
-            // Renderizar todos los productos inicialmente
-            renderProducts(products);
-
-            // Agregar evento de búsqueda
-            searchInput.addEventListener('input', filterProducts);
-
-            // Agregar eventos de filtro
-            filterCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', filterProducts);
+                const paginatedProducts = filteredProducts.slice(start, end);
+                renderProducts(paginatedProducts);
+                setupPagination(filteredProducts.length, page);
             });
+    }
+
+    function renderProducts(products) {
+        portfolioContainer.innerHTML = ''; // Limpiar el contenedor
+        products.forEach(product => {
+            const isSpecialProduct = product.id === 8;
+            const productURL = isSpecialProduct ? 'product_list.html' : `product-detail.html?id=${product.id}`;
+
+            const productHTML = `
+                <div class="col mb-5 portfolio-item">
+                    <a href="${productURL}" title="Ir a ${product.name}">
+                        <div class="portfolio-content h-100">
+                            <img src="${product.image}" class="img-fluid w-100 h-auto" alt="${product.name}">
+                            <div class="portfolio-info">
+                                <h4>${product.name}</h4>
+                                <p>${product.description}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+            portfolioContainer.insertAdjacentHTML('beforeend', productHTML);
         });
+
+        // Inicializar Isotope después de agregar los elementos
+        const iso = new Isotope(portfolioContainer, {
+            itemSelector: '.portfolio-item',
+            layoutMode: 'masonry'
+        });
+
+        // Actualizar el diseño de Isotope después de la carga de imágenes
+        imagesLoaded(portfolioContainer, function () {
+            iso.layout();
+        });
+    }
+
+    function setupPagination(totalItems, currentPage) {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const paginationContainer = document.createElement('nav');
+        paginationContainer.setAttribute('aria-label', 'Page navigation');
+        const paginationList = document.createElement('ul');
+        paginationList.className = 'pagination justify-content-center mt-4';
+        
+        for (let i = 1; i <= totalPages; i++) {
+            const pageLink = document.createElement('a');
+            pageLink.href = '#';
+            pageLink.className = `page-link ${i === currentPage ? 'active' : ''}`;
+            pageLink.textContent = i;
+            pageLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                loadProducts(i, getSelectedFilters(), searchInput.value);
+            });
+            
+            const pageItem = document.createElement('li');
+            pageItem.className = 'page-item';
+            pageItem.appendChild(pageLink);
+            paginationList.appendChild(pageItem);
+        }
+        
+        paginationContainer.appendChild(paginationList);
+        
+        const existingPagination = document.querySelector('.pagination');
+        if (existingPagination) {
+            existingPagination.remove();
+        }
+        document.getElementById('portfolioContainer').after(paginationContainer);
+    }
+
+    function getSelectedFilters() {
+        return Array.from(filterCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+    }
+
+    function filterProducts() {
+        const selectedFilters = getSelectedFilters();
+        const searchTerm = searchInput.value;
+        currentPage = 1; // Reiniciar a la primera página
+        loadProducts(currentPage, selectedFilters, searchTerm);
+    }
+
+    // Iniciar la carga de productos
+    loadProducts(currentPage);
+
+    // Agregar evento de búsqueda
+    searchInput.addEventListener('input', filterProducts);
+
+    // Agregar eventos de filtro
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', filterProducts);
+    });
 });
 
     </script>
