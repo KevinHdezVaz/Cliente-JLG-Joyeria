@@ -460,7 +460,7 @@
               const portfolioContainer = document.getElementById('portfolioContainer');
               products.forEach(product => {
                   const isSpecialProduct = product.id === 8;
-                  const productURL = isSpecialProduct ? 'product_list.html' : `product-detail.html?id=${product.id}`;
+                  const productURL = isSpecialProduct ? 'product_list.html' : `product_list.html`;
                   
                   const productHTML = `
                       <div class="col-lg-4 col-md-6 portfolio-item isotope-item ${product.category || ''}">

@@ -571,7 +571,7 @@
   {
       "id": 29,
       "name": "Cadena Marinera Lisa de plata fina",
-      "sku": "PCML2-055",
+      "sku": "PALCR18-18",
       "price": 90,
       "oldPrice": 120,
       "description": "Medidas: 50 cm de largo y 2 mm de ancho.",
@@ -699,4 +699,504 @@
     "whatsappMessage": "Hola, estoy interesado en el Dije de 2 gatos juntos.. CODIGO: PCT3-055 ¿Está disponible?"
  
  }
+
+ ,
+ 
+ {
+   "id": 35,
+   "name": "Juego de dije y coquetas de corazón",
+   "sku": "PJDCC13-12",
+   "price": 90,
+   "oldPrice": 120,
+   "description": "Medidas: 13 mm de ancho y 12 mm de largo.",
+   "image": "assets/img/dijes_medallas/PDC2MC18-181.webp",
+   "related": [4,5,6],
+   "category": "filter-dijes",
+   "images": [
+    "assets/img/dijes_medallas/PJDCC13-12.webp",
+    "assets/img/dijes_medallas/PDC2MC18-182.webp",   
+    "assets/img/dijes_medallas/PDC2MC18-182.webp",   
+    "assets/img/dijes_medallas/PDC2MC18-18im.jpeg"   
+
+
+   ],
+   "whatsappMessage": "Hola, estoy interesado en el Dije de 2 gatos juntos.. CODIGO: PCT3-055 ¿Está disponible?"
+},
+{
+  "id": 36,
+  "name": "Dije de cruz con piedras",
+  "sku": "PDCP15-25",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 15mm aprox de ancho por 25 mm de largo",
+  "image": "assets/img/dijes_medallas/PDCP15-252.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDCP15-252.webp",
+   "assets/img/dijes_medallas/PDCP15-253.webp",   
+   "assets/img/dijes_medallas/PDCP15-251.webp",   
+   "assets/img/dijes_medallas/PDCP15-25IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de cruz con piedras. CODIGO: PDCP15-25 ¿Está disponible?"
+
+},
+{
+
+  "id": 37,
+  "name": "Juego de dije y coquetas redondas",
+  "sku": "PJDCR12-12",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 12 mm de ancho por 12 mm de largo.",
+  "image": "assets/img/dijes_medallas/PJDCR12-123.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PJDCR12-123.webp",
+   "assets/img/dijes_medallas/PJDCR12-121.webp",   
+   "assets/img/dijes_medallas/PJDCR12-122.webp",   
+   "assets/img/dijes_medallas/PJDCR12-12IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en Juego de dije y coquetas redondas. CODIGO: PJDCR12-12 ¿Está disponible?"
+
+},
+{
+
+  "id": 38,
+  "name": "Dije de San Judas Tadeo en plata ley 925.",
+  "sku": "PDSJT15-05",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 15mm de ancho por 5 cm de altura",
+  "image": "assets/img/dijes_medallas/PDSJT15-052.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDSJT15-052.webp",
+   "assets/img/dijes_medallas/PDSJT15-051.webp",   
+   "assets/img/dijes_medallas/PDSJT15-053.webp",   
+   "assets/img/dijes_medallas/PDSJT15-05IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de San Judas Tadeo en plata ley 925. CODIGO: PDSJT15-05 ¿Está disponible?"
+
+}
+,
+{
+  "id": 39,
+  "name": "Caballo con piedras en plata",
+  "sku": "PDCP20-20",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 20 mm de ancho y 20 mm de largo.",
+  "image": "assets/img/dijes_medallas/PDCP20-202.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDCP20-202.webp",
+   "assets/img/dijes_medallas/PDCP20-201.webp",   
+   "assets/img/dijes_medallas/PDCP20-203.webp",   
+   "assets/img/dijes_medallas/PDCP20-20IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Caballo con piedras en plata. CODIGO: PDCP20-20. ¿Está disponible?"
+
+},
+{
+  "id": 40,
+  "name": "Dije de doble corazón con piedras",
+  "sku": "PDDC12-13",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 12mm de ancho por 123 mm de altura",
+  "image": "assets/img/dijes_medallas/PDDC12-131.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDDC12-131.webp",
+   "assets/img/dijes_medallas/PDDC12-132.webp",   
+   "assets/img/dijes_medallas/PDDC12-133.webp",   
+   "assets/img/dijes_medallas/PDDC12-13IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de doble corazón con piedras. CODIGO: PDDC12-13. ¿Está disponible?"
+
+},
+{
+  "id": 41,
+  "name": "Dije de corazón.",
+  "sku": "PDCV15-15",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 20mm de ancho por 20 mm de altura",
+  "image": "assets/img/dijes_medallas/PDCV15-153.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDCV15-153.webp",
+   "assets/img/dijes_medallas/PDCV15-151.webp",   
+   "assets/img/dijes_medallas/PDCV15-152.webp",   
+   "assets/img/dijes_medallas/PDCV15-15im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de corazón. CODIGO: PDCV15-15. ¿Está disponible?"
+
+},
+{
+  "id": 42,
+  "name": "Dije Elefante en plata ley 925",
+  "sku": "PDE25-15",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 25mm de ancho por 15mm de altura.",
+  "image": "assets/img/dijes_medallas/PDE25-153.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDE25-153.webp",
+   "assets/img/dijes_medallas/PDE25-152.webp",   
+   "assets/img/dijes_medallas/PDE25-151.webp",   
+   "assets/img/dijes_medallas/PDE25-15IM.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije Elefante en plata ley 925. CODIGO: PDE25-15. ¿Está disponible?"
+
+},
+{
+  "id": 43,
+  "name": "Dije de reloj en plata ley 925",
+  "sku": "PDR13-13",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 11 mm de ancho y 11 mm largo.",
+  "image": "assets/img/dijes_medallas/PDR13-133.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDR13-133.webp",
+   "assets/img/dijes_medallas/PDR13-132.webp",   
+   "assets/img/dijes_medallas/PDR13-131.webp",   
+   "assets/img/dijes_medallas/PDR13-13im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de reloj en plata ley 925. CODIGO: PDR13-13. ¿Está disponible?"
+
+}
+,
+{
+  "id": 44,
+  "name": "Dije de búho en plata ley 925",
+  "sku": "PDB09-16",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 9mm de ancho por 16mm de altura.",
+  "image": "assets/img/dijes_medallas/PDB09-163.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDB09-163.webp",
+   "assets/img/dijes_medallas/PDB09-162.webp",   
+   "assets/img/dijes_medallas/PDB09-161.webp",   
+   "assets/img/dijes_medallas/PDB09-16im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de búho en plata ley 925. CODIGO: PDB09-16. ¿Está disponible?"
+
+},
+{
+  "id": 45,
+  "name": "Dije de corazon con la palabra mom.",
+  "sku": "PDCPM15-15",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 15 mm de ancho y 15 mm largo.",
+  "image": "assets/img/dijes_medallas/PDCPM15-153.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDCPM15-153.webp",
+   "assets/img/dijes_medallas/PDCPM15-152.webp",   
+   "assets/img/dijes_medallas/PDCPM15-151.webp",   
+   "assets/img/dijes_medallas/PDCPM15-15im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de corazon con la palabra mom. CODIGO: PDCPM15-15. ¿Está disponible?"
+
+}
+,
+{
+  "id": 46,
+  "name": "Dije jirafa en plata ley 925.",
+  "sku": "PDJ13-20",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 13mm de ancho por 20mm de altura.",
+  "image": "assets/img/dijes_medallas/PDJ13-203.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDJ13-203.webp",
+   "assets/img/dijes_medallas/PDJ13-202.webp",   
+   "assets/img/dijes_medallas/PDJ13-201.webp",   
+   "assets/img/dijes_medallas/PDJ13-20im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije jirafa en plata ley 925. CODIGO: PDJ13-20. ¿Está disponible?"
+
+}
+,
+{
+  "id": 47,
+  "name": "Dije de niño en plata ley 925.",
+  "sku": "PDN12-20",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 12mm de ancho por 20mm de altura.",
+  "image": "assets/img/dijes_medallas/PDN12-203.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDN12-203.webp",
+   "assets/img/dijes_medallas/PDN12-202.webp",   
+   "assets/img/dijes_medallas/PDN12-201.webp",   
+   "assets/img/dijes_medallas/PDN12-20im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de niño en plata ley 925. CODIGO: PDN12-20. ¿Está disponible?"
+
+}
+,
+{
+  "id": 48,
+  "name": "Dije de venado en plata ley 925.",
+  "sku": "PDV13-22",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 13mm de ancho por 22mm de altura.",
+  "image": "assets/img/dijes_medallas/PDV13-223.webp",
+  "related": [4,5,6],
+  "category": "filter-dijes",
+  "images": [
+   "assets/img/dijes_medallas/PDV13-223.webp",
+   "assets/img/dijes_medallas/PDV13-222.webp",   
+   "assets/img/dijes_medallas/PDV13-221.webp",   
+   "assets/img/dijes_medallas/PDV13-22im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Dije de venado en plata ley 925. CODIGO: PDV13-22. ¿Está disponible?"
+
+}
+,
+{
+  "id": 49,
+  "name": "Arracada de canasta con figuras circulares.",
+  "sku": "PACFC19-27",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 19 mm de ancho por 27 mm de altura.",
+  "image": "assets/img/arracada_arete/PACFC19-273.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PACFC19-273.webp",
+   "assets/img/arracada_arete/PACFC19-272.webp",   
+   "assets/img/arracada_arete/PACFC19-271.webp",   
+   "assets/img/arracada_arete/PACFC19-27im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Arracada de canasta con figuras circulares. CODIGO: PACFC19-27. ¿Está disponible?"
+
+},
+{
+  "id": 50,
+  "name": "Arracada de canasta con figura de mariposa",
+  "sku": "PACFM15-20",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 15 mm de ancho por 20 mm de altura.",
+  "image": "assets/img/arracada_arete/PACFM15-203.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PACFM15-203.webp",
+   "assets/img/arracada_arete/PACFM15-202.webp",   
+   "assets/img/arracada_arete/PACFM15-201.webp",   
+   "assets/img/arracada_arete/PACFM15-20im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el AArracada de canasta con figura de mariposa. CODIGO: PACFM15-20. ¿Está disponible?"
+
+}
+,
+{
+  "id": 51,
+  "name": "Arracada diamantada circular",
+  "sku": "PACRD30-30",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 30 mm de ancho por 30 mm de altura.",
+  "image": "assets/img/arracada_arete/PACRD30-301.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PACRD30-301.webp",
+   "assets/img/arracada_arete/PACRD30-302.webp",   
+   "assets/img/arracada_arete/PACRD30-303.webp",   
+   "assets/img/arracada_arete/PACRD30-30im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Arracada diamantada circular. CODIGO: PACRD30-30. ¿Está disponible?"
+
+}
+,
+{
+  "id": 52,
+  "name": "Arracada con hendidura en estrella.",
+  "sku": "PAHE40-40",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 40 mm de ancho por 40 mm de altura.",
+  "image": "assets/img/arracada_arete/PAHE40-403.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PAHE40-403.webp",
+   "assets/img/arracada_arete/PAHE40-402.webp",   
+   "assets/img/arracada_arete/PAHE40-401.webp",   
+   "assets/img/arracada_arete/PAHE40-40im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Arracada con hendidura en estrella. CODIGO: PAHE40-40. ¿Está disponible?"
+
+}
+,
+{
+  "id": 53,
+  "name": "Arracada con linea central y rombos",
+  "sku": "PALCR18-18",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 18 mm de ancho por 18 mm de altura.",
+  "image": "assets/img/arracada_arete/PALCR18-182.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PALCR18-181.webp",
+   "assets/img/arracada_arete/PALCR18-182.webp",   
+   "assets/img/arracada_arete/PALCR18-18im.webp" 
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en el Arracada con linea central y rombos. CODIGO: PAHE40-40. ¿Está disponible?"
+
+}
+,
+{
+  "id": 54,
+  "name": "Arracada estrellada",
+  "sku": "PALR25-25",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 25 mm de ancho y 25 mm de altura.",
+  "image": "assets/img/arracada_arete/PALR25-253.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PALR25-253.webp",
+   "assets/img/arracada_arete/PALR25-252.webp",   
+   "assets/img/arracada_arete/PALR25-251.webp",   
+   "assets/img/arracada_arete/PALR25-25im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en la Arracada estrellada. CODIGO: PALR25-25. ¿Está disponible?"
+
+}
+
+,
+{
+  "id": 55,
+  "name": "Arracada modelo liso y arenoso.",
+  "sku": "PAMLA15-15",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 15 mm de ancho y 15 mm de altura.",
+  "image": "assets/img/arracada_arete/PAMLA15-152.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PAMLA15-152.webp",
+   "assets/img/arracada_arete/PAMLA15-153.webp",   
+   "assets/img/arracada_arete/PAMLA15-151.webp",   
+   "assets/img/arracada_arete/PAMLA15-15im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en la Arracada modelo liso y arenoso. CODIGO: PAMLA15-15. ¿Está disponible?"
+
+}
+,
+{
+  "id": 56,
+  "name": "Arracada circular con piedras.",
+  "sku": "PARCP25-25",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 13 mm de ancho y 22 mm de altura.",
+  "image": "assets/img/arracada_arete/PARCP25-253.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PARCP25-253.webp",
+   "assets/img/arracada_arete/PARCP25-252.webp",   
+   "assets/img/arracada_arete/PARCP25-251.webp",   
+   "assets/img/arracada_arete/PARCP25-25im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en la Arracada circular con piedras. CODIGO: PARCP25-25. ¿Está disponible?"
+
+}
+,
+{
+  "id": 57,
+  "name": "Arracada circular con puntos y líneas",
+  "sku": "PARCPL30-30",
+  "price": 90,
+  "oldPrice": 120,
+  "description": "Medidas: 30 mm de ancho y 30 mm de altura.",
+  "image": "assets/img/arracada_arete/PARCPL30-303.webp",
+  "related": [4,5,6],
+  "category": "filter-arracadas",
+  "images": [
+   "assets/img/arracada_arete/PARCPL30-303.webp",
+   "assets/img/arracada_arete/PARCPL30-302.webp",   
+   "assets/img/arracada_arete/PARCPL30-301.webp",   
+   "assets/img/arracada_arete/PARCPL30-30im.jpeg"   
+
+
+  ],
+  "whatsappMessage": "Hola, estoy interesado en la Arracada circular con puntos y líneas. CODIGO: PARCPL30-30. ¿Está disponible?"
+
+}
 ]
