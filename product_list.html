@@ -121,7 +121,7 @@
             <label for="Dijes">Dijes y Medallas</label>
         </li>
         <li class="list-group-item">
-            <input type="checkbox" class="filter-checkbox" value="filter-rosarios" id="Rosarios">
+            <input type="checkbox" class="filter-checkbox" value="filter-rosario" id="Rosarios">
             <label for="Rosarios">Rosarios</label>
         </li>
         <li class="list-group-item">
@@ -232,14 +232,12 @@
     <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <!-- Custom script to load products -->
     <script>
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+    function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name) || '';
+}
         
-        const urlFilter = getUrlParameter('filter');
+        const urlFilter = getUrlParameter('filter') || '';
         
         document.addEventListener('DOMContentLoaded', function () {
             let currentPage = 1;
@@ -350,13 +348,17 @@
             }
         
             function setInitialFilter() {
-                if (urlFilter) {
-                    const checkbox = document.querySelector(`input[value="${urlFilter}"]`);
-                    if (checkbox) {
-                        checkbox.checked = true;
-                    }
-                }
-            }
+    if (urlFilter) {
+        // Asegurarnos de que el checkbox correcto se marque
+        const checkbox = document.querySelector(`.filter-checkbox[value="${urlFilter}"]`);
+        if (checkbox) {
+            checkbox.checked = true;
+            // Opcionalmente, disparar el evento change para activar el filtrado
+            const event = new Event('change');
+            checkbox.dispatchEvent(event);
+        }
+    }
+}
         
             function debounce(func, wait) {
                 let timeout;

@@ -217,14 +217,14 @@
       <div class="container">
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li><a href="product_list.html" class="filter-item filter-active" data-filter="*">Todos</a></li>
-            <li><a href="product_list.html?filter=filter-esclavas" class="filter-item" data-filter=".filter-esclavas">Esclavas y pulsos</a></li>
-            <li><a href="product_list.html?filter=filter-arracadas" class="filter-item" data-filter=".filter-arracadas">Arracadas y aretes</a></li>
-            <li><a href="product_list.html?filter=filter-anillos" class="filter-item" data-filter=".filter-anillos">Anillos</a></li>
-            <li><a href="product_list.html?filter=filter-dijes" class="filter-item" data-filter=".filter-dijes">Dijes y Medallas</a></li>
-            <li><a href="product_list.html?filter=filter-rosario" class="filter-item" data-filter=".filter-rosario">Rosarios</a></li>
+            <li><a href="product_list.html" class="filter-item filter-active" data-filter="*">Todos</a></li> |
+            <li><a href="product_list.html?filter=filter-esclavas" class="filter-item" data-filter=".filter-esclavas">Esclavas y pulsos</a></li> |
+            <li><a href="product_list.html?filter=filter-arracadas" class="filter-item" data-filter=".filter-arracadas">Arracadas y aretes</a></li> |
+            <li><a href="product_list.html?filter=filter-anillos" class="filter-item" data-filter=".filter-anillos">Anillos</a></li> |
+            <li><a href="product_list.html?filter=filter-dijes" class="filter-item" data-filter=".filter-dijes">Dijes y Medallas</a></li> |
+            <li><a href="product_list.html?filter=filter-rosario" class="filter-item" data-filter=".filter-rosario">Rosarios</a></li> |
             <li><a href="product_list.html?filter=filter-cadena" class="filter-item" data-filter=".filter-cadena">Cadenas</a></li>
-          </ul><!-- End Portfolio Filters -->
+        </ul>
     
           <div id="portfolioContainer" class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
             <!-- Dynamic content will be injected here -->
@@ -402,6 +402,8 @@
 </div>
 
 <style>
+
+
 .btn-read-more {
   margin-top: 30px;
   line-height: 1.2;
@@ -436,6 +438,29 @@
 
 .btn-read-more:hover i {
   transform: translateX(5px);
+}
+
+.portfolio-filters li {
+    display: inline-block;
+    position: relative;
+    padding: 0 5px;
+}
+
+.portfolio-filters li:not(:last-child):after {
+    content: "|";
+    position: absolute;
+    right: -5px;
+    color: #4154f1;
+    opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+    .portfolio-filters li {
+        padding: 0 3px;
+    }
+    .portfolio-filters li:not(:last-child):after {
+        right: -3px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -679,30 +704,37 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Manejar los filtros
     const filterItems = document.querySelectorAll('.portfolio-filters .filter-item');
+
     
-    filterItems.forEach(item => {
-        item.addEventListener('click', function(e) {
-            e.preventDefault();
+    // Modificar solo la parte del manejador de eventos
+filterItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Si estamos en la página principal
+        if (window.location.pathname.endsWith('index.html') || 
+            window.location.pathname.endsWith('/')) {
             
-            const filterValue = this.getAttribute('data-filter');
+            // Mostrar el loader existente
+            document.getElementById('loader').style.display = 'flex';
             
-            // Si estamos en la página principal
-            if (window.location.pathname.endsWith('index.html') || 
-                window.location.pathname.endsWith('/')) {
-                // Actualizar clases active
-                filterItems.forEach(filter => filter.classList.remove('filter-active'));
-                this.classList.add('filter-active');
-                
-                if (filterValue === '*') {
-                    // Mostrar todos
-                    iso.arrange({ filter: '*' });
-                } else {
-                    // Redirigir a la página de productos con el filtro
-                    window.location.href = `product_list.html?filter=${filterValue.substring(1)}`;
-                }
-            }
-        });
+            // Actualizar clases active
+            filterItems.forEach(filter => filter.classList.remove('filter-active'));
+            this.classList.add('filter-active');
+            
+            // Pequeño retraso para asegurar que el loader se muestre
+            setTimeout(() => {
+                // Redirigir según el filtro
+                window.location.href = filterValue === '*' ? 
+                    'product_list.html' : 
+                    `product_list.html?filter=${filterValue.substring(1)}`;
+            }, 100);
+        }
     });
+});
+
 
     // Actualizar el layout después de cargar las imágenes
     imagesLoaded(portfolioContainer, function() {
